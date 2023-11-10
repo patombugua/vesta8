@@ -630,9 +630,9 @@ fi
 
 # Installing rpm packages
 dnf install -y php;
-dnf module install -y php:remi-7.3;
-dnf module reset -y php:remi-7.3;
-dnf module install -y php:remi-7.3;
+dnf module install -y php:remi-8.2;
+dnf module reset -y php:remi-8.2;
+dnf module install -y php:remi-8.2;
 dnf install -y $software
 if [ $? -ne 0 ]; then
     if [ "$remi" = 'yes' ]; then
