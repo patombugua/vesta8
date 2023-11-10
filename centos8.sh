@@ -628,6 +628,10 @@ fi
 #                     Install packages                     #
 #----------------------------------------------------------#
 
+
+# vsftp support
+dnf install -y initscripts
+
 # Installing rpm packages
 dnf install -y php;
 dnf module install -y php:remi-8.2;
