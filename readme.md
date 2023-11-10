@@ -10,7 +10,7 @@ dnf install -y wget perl psmisc epel-release; dnf install -y dos2unix;
 
 3) INSTALL
 
-cd; wget https://raw.githubusercontent.com/carlosfriascf/vesta8/master/install.sh -O /root/install.sh; dos2unix install.sh; sed -i 's/\r$//' install.sh; sh install.sh;
+cd; wget https://raw.githubusercontent.com/patombugua/vesta8/master/install.sh -O /root/install.sh; dos2unix install.sh; sed -i 's/\r$//' install.sh; sh install.sh;
 
 And done :)
 

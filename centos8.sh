@@ -6,8 +6,8 @@
 #                  Variables&Functions                     #
 #----------------------------------------------------------#
 export PATH=$PATH:/sbin
-RHOST='vst.sysdop.com/8'
-CHOST='git.sysdop.com'
+RHOST='r.vestacp.com'
+CHOST='c.vestacp.com'
 REPO='cmmnt'
 VERSION='rhel'
 VESTA='/usr/local/vesta'
@@ -19,7 +19,7 @@ codename="${os}_7"
 vestacp="$VESTA/install/$VERSION/7"
 
 # Defining software pack for all distros
-software="http://nginx.org/packages/mainline/centos/8/x86_64/RPMS/nginx-1.17.7-1.el8.ngx.x86_64.rpm awstats bc bind bind-libs bind-utils clamav-server clamav-update
+software="http://nginx.org/packages/mainline/centos/9/x86_64/RPMS/nginx-1.25.3-1.el9.ngx.x86_64.rpm awstats bc bind bind-libs bind-utils clamav-server clamav-update
     curl dovecot e2fsprogs exim expect fail2ban flex freetype ftp GeoIP httpd
     ImageMagick iptables-services jwhois lsof mailx mariadb mariadb-server mc
     mod_fcgid mod_ssl net-tools openssh-clients pcre php
@@ -253,7 +253,7 @@ if [ ! -e '/usr/bin/wget' ]; then
 fi
 
 # Checking repository availability
-wget -q "git.sysdop.com/GPG.txt" -O /dev/null
+wget -q "c.vestacp.com/GPG.txt" -O /dev/null
 check_result $? "No access to Vesta repository"
 
 # Checking installed packages
@@ -465,7 +465,7 @@ fi
 nrepo="/etc/yum.repos.d/nginx.repo"
 echo "[nginx]" > $nrepo
 echo "name=nginx repo" >> $nrepo
-echo "baseurl=http://nginx.org/packages/mainline/centos/8/x86_64/" >> $nrepo
+echo "baseurl=http://nginx.org/packages/mainline/centos/9/x86_64/" >> $nrepo
 
 # Installing Vesta repository
 vrepo='/etc/yum.repos.d/vesta.repo'
@@ -475,7 +475,7 @@ echo "baseurl=http://$RHOST/" >> $vrepo
 echo "enabled=1" >> $vrepo
 echo "gpgcheck=0" >> $vrepo
 echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-VESTA" >> $vrepo
-wget git.sysdop.com/GPG.txt -O /etc/pki/rpm-gpg/RPM-GPG-KEY-VESTA
+wget c.vestacp.com/GPG.txt -O /etc/pki/rpm-gpg/RPM-GPG-KEY-VESTA
 
 
 #----------------------------------------------------------#
@@ -919,7 +919,7 @@ if [ "$apache" = 'yes'  ]; then
     chkconfig httpd on
     rm -fv /etc/httpd/conf.modules.d/10-proxy_h2.conf;
     rm -fv /etc/httpd/conf.d/ruid2.conf;
-    wget https://raw.githubusercontent.com/carlosfriascf/vesta8/master/15-php.conf -O /etc/httpd/conf.modules.d/15-php.conf;
+    wget https://raw.githubusercontent.com/patombugua/vesta8/master/15-php.conf -O /etc/httpd/conf.modules.d/15-php.conf;
     service httpd start
     check_result $? "httpd start failed"
 
