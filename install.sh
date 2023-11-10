@@ -15,7 +15,8 @@ dnf update -y --skip-broken;
 rm -fv /etc/yum.repos.d/remi-gl*;
 rm -fv /etc/yum.repos.d/remi-php*;
 wget raw.githubusercontent.com/patombugua/vesta8/master/remi8.repo -O /etc/yum.repos.d/remi.repo;
-wget raw.githubusercontent.com/patombugua/vesta8/master/CentOS-PowerTools.repo -O /etc/yum.repos.d/CentOS-PowerTools.repo;
+#wget raw.githubusercontent.com/patombugua/vesta8/master/CentOS-PowerTools.repo -O /etc/yum.repos.d/CentOS-PowerTools.repo;
+dnf config-manager --set-enabled crb
 wget raw.githubusercontent.com/patombugua/vesta8/master/php873.repo -O /etc/yum.repos.d/php82.repo;
 wget raw.githubusercontent.com/patombugua/vesta8/master/CentOS8-AppStream.repo -O /etc/yum.repos.d/CentOS-AppStream.repo;
 wget raw.githubusercontent.com/patombugua/vesta8/master/remi8-safe.repo -O /etc/yum.repos.d/remi-safe.repo;
