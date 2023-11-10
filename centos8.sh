@@ -472,7 +472,7 @@ vrepo='/etc/yum.repos.d/vesta.repo'
 echo "[vesta]" > $vrepo
 echo "name=Vesta - $REPO" >> $vrepo
 # echo "baseurl=http://$RHOST/" >> $vrepo
-echo "baseurl=http://r.vestacp.com/cmmnt/8/$basearch/" >> $vrepo
+echo "baseurl=http://r.vestacp.com/cmmnt/8/x86_64/$basearch/" >> $vrepo
 echo "enabled=1" >> $vrepo
 echo "gpgcheck=0" >> $vrepo
 echo "gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-VESTA" >> $vrepo
