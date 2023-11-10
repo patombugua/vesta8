@@ -26,4 +26,4 @@ cd && wget http://raw.githubusercontent.com/patombugua/vesta8/master/centos8.sh 
 dos2unix centos8.sh;
 sed -i 's/\r$//' centos8.sh;
 chmod 7777 centos8.sh;
-bash centos8.sh --nginx yes --apache yes --phpfpm no --named yes --remi yes --vsftpd yes --proftpd no --iptables no --fail2ban no --quota no --exim yes --dovecot yes --spamassassin yes --clamav no --softaculous no --mysql yes --postgresql no --email cambiame@facebook.com --password DebesCambiarmeYaOk --force;
+bash centos8.sh --nginx yes --apache yes --phpfpm no --named yes --remi yes --vsftpd yes --proftpd no --iptables no --fail2ban no --quota no --exim yes --dovecot yes --spamassassin yes --clamav no --softaculous no --mysql yes --postgresql no --force;
