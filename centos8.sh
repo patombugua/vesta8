@@ -633,6 +633,10 @@ fi
 dnf install -y initscripts
 
 # Installing rpm packages
+
+# vi /etc/httpd/conf.modules.d/00-mpm.conf
+# comment #LoadModule mpm_event_module modules/mod_mpm_event.so
+# uncomment LoadModule mpm_prefork_module modules/mod_mpm_prefork.so
 dnf install -y php;
 dnf module install -y php:remi-8.2;
 dnf module reset -y php:remi-8.2;
@@ -971,6 +975,7 @@ done
 
 if [ "$vsftpd" = 'yes' ]; then
     cp -f $vestacp/vsftpd/vsftpd.conf /etc/vsftpd/
+    # bash centos8.sh --nginx yes --apache yes --phpfpm no --named yes --remi yes --vsftpd yes --proftpd no --iptables yes --fail2ban yes --quota yes --exim yes --dovecot yes --spamassassin yes --clamav no --softaculous no --mysql yes --postgresql no --force;
     chkconfig vsftpd on
     service vsftpd start
     check_result $? "vsftpd start failed"
@@ -1050,6 +1055,10 @@ if [ "$mysql" = 'yes' ]; then
     chmod 777 /var/lib/phpMyAdmin/temp
     chmod 777 /var/lib/phpMyAdmin/save
 fi
+
+
+# In /usr/local/vesta/conf/vesta.conf change
+# from DB_SYSTEM='mysql' to DB_SYSTEM='mariadb'
 
 
 #----------------------------------------------------------#
@@ -1400,3 +1409,7 @@ rm -f $tmpfile
 dnf install -y --skip-broken gmp-devel; v-delete-vesta-softaculous; rm -fv /usr/local/vesta/softaculous/vst_installed; dnf remove -y vesta-softaculous; rm -rfv /usr/local/vesta/softaculous; rm -rfv /var/softaculous; rm -fv /etc/httpd/conf.d/ruid2.conf;
 rm -fv /usr/lib/systemd/system/httpd.service.d/*; systemctl daemon-reload;
 # EOF
+
+
+
+#sudo chmod o+w ./public_html/ -R
