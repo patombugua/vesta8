@@ -19,7 +19,7 @@ codename="${os}_7"
 vestacp="$VESTA/install/$VERSION/7"
 
 # Defining software pack for all distros
-software="http://nginx.org/packages/mainline/centos/9/x86_64/RPMS/nginx-1.25.3-1.el9.ngx.x86_64.rpm awstats bc bind bind-libs bind-utils clamav-server clamav-update
+software="http://nginx.org/packages/mainline/centos/9/x86_64/RPMS/nginx-1.25.4-1.el9.ngx.x86_64.rpm awstats bc bind bind-libs bind-utils clamav-server clamav-update
     curl dovecot e2fsprogs exim expect fail2ban flex freetype ftp GeoIP httpd
     ImageMagick iptables-services jwhois lsof mailx mariadb mariadb-server mc
     mod_fcgid mod_ssl net-tools openssh-clients pcre php
